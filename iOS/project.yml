@@ -1,0 +1,75 @@
+name: Cardholder Miles
+options:
+  bundleIdPrefix: com.shimondeitel.milestrack
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Cardholder Miles:
+    type: application
+    platform: iOS
+    sources:
+      - path: Cardholder Miles
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.milestrack
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Cardholder Miles/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  Cardholder MilesTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Cardholder MilesTests
+      - path: Cardholder Miles.storekit
+    dependencies:
+      - target: Cardholder Miles
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.milestrack.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  Cardholder MilesUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Cardholder MilesUITests
+    dependencies:
+      - target: Cardholder Miles
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.milestrack.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Cardholder Miles:
+    build:
+      targets:
+        Cardholder Miles: all
+        Cardholder MilesTests: [test]
+        Cardholder MilesUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Cardholder Miles.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Cardholder Miles.storekit
+      targets:
+        - Cardholder MilesTests
+        - Cardholder MilesUITests
+    archive:
+      config: Release

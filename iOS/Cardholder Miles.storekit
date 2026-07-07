@@ -1,0 +1,40 @@
+{
+  "identifier": "0000",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {},
+  "subscriptionGroups": [
+    {
+      "id": "1000",
+      "localizations": [],
+      "name": "Cardholder Miles Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "2.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "2000",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Cardholder Miles Pro monthly subscription",
+              "displayName": "Cardholder Miles Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.shimondeitel.milestrack.pro.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Cardholder Miles Pro Monthly",
+          "subscriptionGroupID": "1000",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}
